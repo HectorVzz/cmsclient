@@ -5,10 +5,15 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { _ParseAST } from '@angular/compiler';
 
-interface Iresponse{
+interface IPost {
   title: string;
   description: string;
   date: Date;
+}
+
+interface IBodyData {
+  title: string;
+  description: string;
 }
 
 @Component({
@@ -23,17 +28,26 @@ export class MainComponent implements OnInit {
 
   }
 
-  posts: any;
-  aver: any;
+  posts: IPost[];
+  bodyData: IBodyData;
 
   async ngOnInit(): Promise<void> {
     this.getPosts().subscribe((data) => {
       this.posts = data['data'];
     });
+    this.getBodyData().subscribe((data) => {
+      this.bodyData = data['data'];
+    })
   }
 
-   getPosts(){
-    return this.http.get<[Iresponse]>('http://localhost:5000/post',{responseType: 'json', observe: 'body'})
+
+
+  getPosts() {
+    return this.http.get('http://localhost:5000/post', { responseType: 'json', observe: 'body' });
+  }
+
+  getBodyData() {
+    return this.http.get('http://localhost:5000/bodydata', { responseType: 'json', observe: 'body' });
   }
 
 }

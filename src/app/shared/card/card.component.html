@@ -7,8 +7,8 @@
   <div class="md:m-2 text-justify text-sm">
     <p class="text-right text-xs">{{ date }}</p>
     <h2 class="font-bold text-lg h-2 mb-8">{{ title }}</h2>
-    <p class="text-xs">
-      {{ description }}
+    <p class="text-xs break-all h-8">
+      {{ description | slice:0:100 }}
     </p>
   </div>
   <div class="w-full text-right mt-4">
