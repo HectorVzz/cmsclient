@@ -1,0 +1,32 @@
+.card-container{
+  @apply bg-white;
+  @apply overflow-hidden;
+  @apply border;
+  @apply border-gray-200;
+  @apply mr-2;
+  transition: background-color .5s;
+}
+
+.card-container:hover {
+  @apply bg-green-100;
+}
+
+
+
+
+@screen md {
+.card-container {
+  @apply p-3;
+}
+}
+
+
+@keyframes hoverin {
+  from {
+    @apply bg-none
+  }
+
+  to {
+    @apply bg-green-100;
+  }
+}
