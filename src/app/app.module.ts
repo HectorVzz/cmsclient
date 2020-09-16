@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './views/main/main.component';
 import { HeaderComponent } from './core/header/header.component';
 import { CardComponent } from './shared/card/card.component';
+import { SafePipe } from './pipes/safe.pipe';
+import { PostComponent } from './views/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    CardComponent
+    CardComponent,
+    SafePipe,
+    PostComponent
   ],
   imports: [
     BrowserModule,

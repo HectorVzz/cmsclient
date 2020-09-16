@@ -1,0 +1,12 @@
+<div class="min-h-screen">
+  <div *ngIf="post; else elseblock">
+    <img class="block mx-auto mt-12" [src]="image | safe" />
+    <div class="text-6xl break-words">{{ title }}</div>
+    <div class="text-3xl break-words">{{ description }}</div>
+  </div>
+  <ng-template #elseblock>
+    <div class="text-center">
+      <div class="text-6xl">No se encontro este post</div>
+    </div>
+  </ng-template>
+</div>

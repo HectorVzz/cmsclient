@@ -20,6 +20,8 @@ export class HeaderComponent implements OnInit {
   }
 
   navData: INavData;
+  get title() { return (this.navData && this.navData.title) ? this.navData.title : null}
+
 
   ngOnInit(): void {
     this.getNavData().subscribe((data) => {
