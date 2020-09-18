@@ -33,8 +33,6 @@ export class PostComponent implements OnInit {
       this.getPost(this.id).subscribe(data => {
         this.post = data['data'];
       });
-
-      // In a real app: dispatch action to load the details here.
     });
   }
 
